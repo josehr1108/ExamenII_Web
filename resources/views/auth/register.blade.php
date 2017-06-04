@@ -61,6 +61,16 @@
                         </div>
 
                         <div class="form-group">
+                                <label for="sel1" class=" col-md-4 control-label">Tipo de Usuario:</label>
+                                <div class="col-md-6">
+                                    <select class="form-control" name="admin" id="sel1">
+                                        <option value="Usuario">Usuario</option>
+                                        <option value="Administrador">Administrador</option>
+                                    </select>
+                                </div>
+                        </div>
+
+                        <div class="form-group">
                             <div class="col-md-6 col-md-offset-4">
                                 <button type="submit" class="btn btn-primary">
                                     Register
