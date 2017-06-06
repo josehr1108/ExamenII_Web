@@ -42,7 +42,7 @@
                             <li><a href="/clientes/CRUD">Clientes</a></li>
                             <li><a href="/productos/CRUD">Productos</a></li>
                             <li><a href="/inventarios/CRUD">Inventario</a></li>
-                            <li><a href="#">Movimiento de Inventario</a></li>
+                            <li><a href="/movimientos/CRUD">Movimiento de Inventario</a></li>
                         </ul>
                 @endif
                     <!-- Right Side Of Navbar -->

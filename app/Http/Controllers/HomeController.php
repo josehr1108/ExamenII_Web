@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Cliente;
+use App\MovimientoInventario;
 use App\Producto;
 use App\Inventario;
 use Illuminate\Http\Request;
@@ -71,11 +72,12 @@ class HomeController extends Controller
     }
 
     public function vistaMovimientos(){
-
+        $movimientos = MovimientoInventario::all()->toJson();
+        return view('movimientos.movimientos',['movimientos' => json_decode($movimientos)]);
     }
 
     public function vistaBotonesMov(){
-        return view('inventarios.btninventario');
+        return view('movimientos.btnmovimiento');
     }
 
     public function vistaCrearMov(){
