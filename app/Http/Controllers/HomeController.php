@@ -3,9 +3,9 @@
 namespace App\Http\Controllers;
 
 use App\Cliente;
-use App\MovimientoInventario;
 use App\Producto;
 use App\Inventario;
+use App\MovimientoInventario;
 use Illuminate\Http\Request;
 use Symfony\Component\HttpKernel\Client;
 
@@ -81,6 +81,7 @@ class HomeController extends Controller
     }
 
     public function vistaCrearMov(){
-        return view('inventarios.crear');
+        $productos = Producto::all()->toJson();
+        return view('movimientos.crear',['productos' => json_decode($productos)]);
     }
 }
