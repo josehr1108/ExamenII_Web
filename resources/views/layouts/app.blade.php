@@ -44,7 +44,7 @@
                             <li><a href="/inventarios/CRUD">Inventario</a></li>
                             <li><a href="#">Movimiento de Inventario</a></li>
                         </ul>
-                    @endif
+                @endif
                     <!-- Right Side Of Navbar -->
                     <ul class="nav navbar-nav navbar-right">
                         <!-- Authentication Links -->

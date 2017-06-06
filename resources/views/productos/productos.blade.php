@@ -33,7 +33,9 @@
                         <td>{{$producto->fechaIngreso}}</td>
                         <td>{{$producto->unidad}}</td>
                         <td>{{$producto->impuesto}}</td>
+                        @if (Auth::user()->admin == "Administrador")
                         <td><button onclick="borrar({{$producto->id}})">Borrar</button></td>
+                        @endif
                     </tr>
                     @endforeach
                 </tbody>

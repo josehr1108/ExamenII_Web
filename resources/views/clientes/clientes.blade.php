@@ -29,7 +29,9 @@
                         <td>{{$cliente->sexo}}</td>
                         <td>{{$cliente->fechaIngreso}}</td>
                         <td>{{$cliente->descuento}}</td>
+                        @if (Auth::user()->admin == "Administrador")
                         <td><button onclick="borrar({{$cliente->cedula}})">Borrar</button></td>
+                        @endif
                     </tr>
                     @endforeach
                 </tbody>

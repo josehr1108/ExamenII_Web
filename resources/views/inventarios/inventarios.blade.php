@@ -23,7 +23,9 @@
                         <td>{{$inventario->cantidadMinima}}</td>
                         <td>{{$inventario->cantidadMaxima}}</td>
                         <td>{{$inventario->iv}}</td>
+                        @if (Auth::user()->admin == "Administrador")
                         <td><button onclick="borrar({{$inventario->id}})">Borrar</button></td>
+                        @endif
                     </tr>
                     @endforeach
                 </tbody>
