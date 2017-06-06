@@ -19,3 +19,4 @@ Route::get('/user', function (Request $request) {
 })->middleware('auth:api');
 
 Route::resource('clientes', 'ClienteController');
+Route::resource('productos', 'ProductoController');

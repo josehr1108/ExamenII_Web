@@ -30,6 +30,7 @@ class HomeController extends Controller
 
     public function vistaClientes(){
         $clientes = Cliente::all()->toArray();
+
         return view('clientes.clientes',['clientes' => $clientes]);
     }
 }
