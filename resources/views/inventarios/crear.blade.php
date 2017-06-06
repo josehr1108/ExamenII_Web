@@ -9,12 +9,12 @@
             <div class="panel-body">
                 <form class="form-inline" method="post" action="/api/inventarios">
                     <div class="form-group">
-                        <label for="id">Id:</label>
-                        <input type="text" class="form-control" name="id" placeholder="Id">
-                    </div>
-                    <div class="form-group">
                         <label for="producto">Producto:</label>
-                        <input type="number" class="form-control" name="producto" placeholder="Producto">
+                        <select name="producto">
+                            @foreach($productos as $producto)
+                                <option value="{{$producto->id}}">{{$producto->nombre}}</option>
+                            @endforeach
+                        </select>
                     </div>
                     <div class="form-group">
                         <label for="cantidad">Cantidad:</label>

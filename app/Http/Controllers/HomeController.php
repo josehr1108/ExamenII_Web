@@ -66,6 +66,7 @@ class HomeController extends Controller
     }
 
     public function vistaCrearInv(){
-        return view('inventarios.crear');
+        $productos = Producto::all()->toJson();
+        return view('inventarios.crear',['productos' => json_decode($productos)]);
     }
 }

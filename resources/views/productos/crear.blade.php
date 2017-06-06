@@ -9,10 +9,6 @@
             <div class="panel-body">
                 <form class="form-inline" method="post" action="/api/productos">
                     <div class="form-group">
-                        <label for="id">Id:</label>
-                        <input type="text" class="form-control" name="id" placeholder="Id">
-                    </div>
-                    <div class="form-group">
                         <label for="nombre">Nombre:</label>
                         <input type="text" class="form-control" name="nombre" placeholder="Nombre">
                     </div>
