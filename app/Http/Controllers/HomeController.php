@@ -68,4 +68,16 @@ class HomeController extends Controller
     public function vistaCrearInv(){
         return view('inventarios.crear');
     }
+
+    public function vistaMovimientos(){
+
+    }
+
+    public function vistaBotonesMov(){
+        return view('inventarios.btninventario');
+    }
+
+    public function vistaCrearMov(){
+        return view('inventarios.crear');
+    }
 }

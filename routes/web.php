@@ -37,3 +37,9 @@ Route::get('/inventarios', 'HomeController@vistaInventarios');
 Route::get('/inventarios/CRUD', 'HomeController@vistaBotonesInv');
 
 Route::get('/inventarios/crear','HomeController@vistaCrearInv');
+
+Route::get('/movimientos', 'HomeController@vistaMovimientos');
+
+Route::get('/movimientos/CRUD', 'HomeController@vistaBotonesMov');
+
+Route::get('/movimientos/crear','HomeController@vistaCrearMov');
