@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Cliente;
+use App\Producto;
 use Illuminate\Http\Request;
 use Symfony\Component\HttpKernel\Client;
 
@@ -29,8 +30,28 @@ class HomeController extends Controller
     }
 
     public function vistaClientes(){
-        $clientes = Cliente::all()->toArray();
+        $clientes = Cliente::all()->toJson();
+        return view('clientes.clientes',['clientes' => json_decode($clientes)]);
+    }
 
-        return view('clientes.clientes',['clientes' => $clientes]);
+    public function vistaBotones(){
+        return view('clientes.btncliente');
+    }
+
+    public function vistaCrear(){
+        return view('clientes.crear');
+    }
+
+    public function vistaProductos(){
+        $productos = Producto::all()->toJson();
+        return view('productos.productos',['productos' => json_decode($productos)]);
+    }
+
+    public function vistaBotonesPro(){
+        return view('productos.btnproducto');
+    }
+
+    public function vistaCrearPro(){
+        return view('productos.crear');
     }
 }

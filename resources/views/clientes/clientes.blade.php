@@ -18,20 +18,33 @@
                     </tr>
                 </thead>
                 <tbody>
+                    @foreach ($clientes as $cliente)
                     <tr>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
+                        <td>{{$cliente->cedula}}</td>
+                        <td>{{$cliente->nombre}}</td>
+                        <td>{{$cliente->apellido}}</td>
+                        <td>{{$cliente->fechaNacimiento}}</td>
+                        <td>{{$cliente->direccion}}</td>
+                        <td>{{$cliente->estadoCivil}}</td>
+                        <td>{{$cliente->sexo}}</td>
+                        <td>{{$cliente->fechaIngreso}}</td>
+                        <td>{{$cliente->descuento}}</td>
+                        <td><button onclick="borrar({{$cliente->cedula}})">Borrar</button></td>
                     </tr>
+                    @endforeach
                 </tbody>
-
             </table>
         </div>
     </div>
+    <script>
+        function borrar(cedula){
+            url = "/api/clientes/"+cedula;
+            $.ajax(url,{
+                method : 'DELETE',
+                success : function (data) {
+                    alert(data.mensaje);
+                }
+            });
+        }
+    </script>
 @endsection

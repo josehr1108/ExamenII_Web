@@ -21,3 +21,13 @@ Auth::routes();
 Route::get('/home', 'HomeController@index');
 
 Route::get('/clientes', 'HomeController@vistaClientes');
+
+Route::get('/clientes/CRUD', 'HomeController@vistaBotones');
+
+Route::get('/clientes/crear','HomeController@vistaCrear');
+
+Route::get('/productos', 'HomeController@vistaProductos');
+
+Route::get('/productos/CRUD', 'HomeController@vistaBotonesPro');
+
+Route::get('/productos/crear','HomeController@vistaCrearPro');
