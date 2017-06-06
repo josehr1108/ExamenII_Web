@@ -4,10 +4,10 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
-class Inventario extends Model
+class MovimientoInventario extends Model
 {
     protected $fillable = [
-        'producto', 'cantidad', 'cantidadMinima', 'cantidadMaxima', 'iv'
+        'producto', 'cantidadAnterior', 'cantidadNueva', 'fechaActualizacion'
     ];
 
     public function producto()

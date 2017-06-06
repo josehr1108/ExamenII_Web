@@ -92,14 +92,10 @@ class ClienteController extends Controller
         $cliente = Cliente::where('cedula',$cedula)->first();
         if($cliente){
             try{
-               /* $cliente->direccion = $request->input('direccion');
-                $cliente->estadoCivil = $request->input('estadoCivil');
-                $cliente->descuento = $request->input('descuento');*/
-
                 Cliente::where('cedula',$cedula)->update(['direccion' => $request->input('direccion'),
                                   'estadoCivil' => $request->input('estadoCivil'),
                                   'descuento' => $request->input('descuento')]);
-                //$cliente->save();
+
                 return response()->json(['mensaje' => 'El cliente se edito exitosamente'],200);
             }catch (Exception $exception){
                 $mensaje = $exception->getMessage();
