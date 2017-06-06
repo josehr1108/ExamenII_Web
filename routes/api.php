@@ -20,3 +20,4 @@ Route::get('/user', function (Request $request) {
 
 Route::resource('clientes', 'ClienteController');
 Route::resource('productos', 'ProductoController');
+Route::resource('inventarios', 'InventarioController');

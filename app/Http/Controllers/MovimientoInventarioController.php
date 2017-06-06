@@ -2,10 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use App\Inventario;
+use App\MovimientoInventario;
 use Illuminate\Http\Request;
 
-class InventarioController extends Controller
+class MovimientoInventarioController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -14,8 +14,8 @@ class InventarioController extends Controller
      */
     public function index()
     {
-        $inventarios = Inventario::all()->toArray();
-        return response()->json($inventarios);
+        $movimiento = MovimientoInventario::all()->toArray();
+        return response()->json($movimiento);
     }
 
     /**
@@ -37,9 +37,8 @@ class InventarioController extends Controller
     public function store(Request $request)
     {
         try{
-            Inventario::create($request->all());
-            return response()->json(['mensaje' => "Se creo el inventario exitosamente"],200);
-
+            MovimientoInventario::create($request->all());
+            return response()->json(['mensaje' => "Se creo el movimiento exitosamente"],200);
         }catch (\Exception $exception){
             $exceptionMsg = "Error: {$exception->getMessage()}";
             return response()->json(['mensaje' => $exceptionMsg],500);
@@ -54,11 +53,11 @@ class InventarioController extends Controller
      */
     public function show($id)
     {
-        $inventario = Inventario::find($id);
-        if($inventario){
-            return response()->json($inventario,200);
+        $movimiento = MovimientoInventario::find($id);
+        if($movimiento){
+            return response()->json($movimiento,200);
         }else{
-            return response()->json(['mensaje' => 'El producto solicitado no existe!'],404);
+            return response()->json(['mensaje' => 'El movimiento solicitado no existe!'],404);
         }
     }
 
@@ -82,23 +81,22 @@ class InventarioController extends Controller
      */
     public function update(Request $request, $id)
     {
-        $inventario = Inventario::find($id);
-        if($inventario){
+        $movimiento = MovimientoInventario::find($id);
+        if($movimiento){
             try{
-                $inventario->cantidad = $request->cantidad;
-                $inventario->cantidadMinima = $request->cantidadMinima;
-                $inventario->cantidadMaxima = $request->cantidadMaxima;
-                $inventario->iv = $request->iv;
+                $movimiento->cantidadAnterior = $request->cantidadAnterior;
+                $movimiento->cantidadNueva = $request->cantidadNueva;
+                $movimiento->fechaActualizacion = $request->fechaActualizacion;
 
-                $inventario->save();
+                $movimiento->save();
 
-                return response()->json(['mensaje' => 'El inventario se edito exitosamente'],200);
+                return response()->json(['mensaje' => 'El movimiento se edito exitosamente'],200);
             }catch (Exception $exception){
                 $mensaje = $exception->getMessage();
                 return response()->json(['mensaje' => $mensaje],500);
             }
         }else{
-            return response()->json(['mensaje' => 'El inventario no existe'],404);
+            return response()->json(['mensaje' => 'El movimiento no existe'],404);
         }
     }
 
@@ -110,12 +108,12 @@ class InventarioController extends Controller
      */
     public function destroy($id)
     {
-        $inventario = Inventario::find($id);
-        if($inventario){
-            $inventario->delete();
-            return response()->json(['mensaje' => 'El inventario se borro exitosamente'],404);
+        $movimiento = MovimientoInventario::find($id);
+        if($movimiento){
+            $movimiento->delete();
+            return response()->json(['mensaje' => 'El movimiento se borro exitosamente'],404);
         }else{
-            return response()->json(['mensaje' => 'El producto no existe'],404);
+            return response()->json(['mensaje' => 'El movimiento no existe'],404);
         }
     }
 }

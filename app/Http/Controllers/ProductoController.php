@@ -54,7 +54,7 @@ class ProductoController extends Controller
      */
     public function show($id)
     {
-        $producto = Cliente::find($id);
+        $producto = Producto::find($id);
         if($producto){
             return response()->json($producto,200);
         }else{
