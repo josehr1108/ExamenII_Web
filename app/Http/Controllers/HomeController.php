@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Cliente;
 use App\Producto;
+use App\Inventario;
 use Illuminate\Http\Request;
 use Symfony\Component\HttpKernel\Client;
 
@@ -53,5 +54,18 @@ class HomeController extends Controller
 
     public function vistaCrearPro(){
         return view('productos.crear');
+    }
+
+    public function vistaInventarios(){
+        $inventarios= Inventario::all()->toJson();
+        return view('inventarios.inventarios',['inventarios' => json_decode($inventarios)]);
+    }
+
+    public function vistaBotonesInv(){
+        return view('inventarios.btninventario');
+    }
+
+    public function vistaCrearInv(){
+        return view('inventarios.crear');
     }
 }

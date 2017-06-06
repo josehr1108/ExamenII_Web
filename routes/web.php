@@ -31,3 +31,9 @@ Route::get('/productos', 'HomeController@vistaProductos');
 Route::get('/productos/CRUD', 'HomeController@vistaBotonesPro');
 
 Route::get('/productos/crear','HomeController@vistaCrearPro');
+
+Route::get('/inventarios', 'HomeController@vistaInventarios');
+
+Route::get('/inventarios/CRUD', 'HomeController@vistaBotonesInv');
+
+Route::get('/inventarios/crear','HomeController@vistaCrearInv');
